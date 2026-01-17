@@ -48,3 +48,16 @@ export async function DELETE(request: Request) {
     return NextResponse.json({ error: "User not found" }, { status: 404 });
   }
 }
+
+export async function PATCH(request: Request) {
+  const updatedUser = await request.json();
+  const index = users.findIndex((user) => user.id === updatedUser.id);
+  if (index !== -1) {
+    users[index] = updatedUser;
+    return NextResponse.json(updatedUser);
+  } else {
+    return NextResponse.json({ error: "User not found" }, { status: 404 });
+  }
+}
+
+
