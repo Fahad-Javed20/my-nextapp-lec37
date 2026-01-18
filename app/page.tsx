@@ -1,7 +1,12 @@
 import Link from "next/link";
 import axios from "axios";
+import { Metadata } from "next";
+
+
 
 export default async function Home() {
+
+  
   let customers = [];
   
   try {
