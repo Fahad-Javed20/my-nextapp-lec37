@@ -28,7 +28,12 @@ export async function deleteCustomer(id: number) {
   return null;
 }
 
-export async function updateCustomer(updatedCustomer: { id: number; name: string; email: string; phone: string; address: string; }) {
+export async function updateCustomer(updatedCustomer: {
+   id: number;
+    name: string;
+     email: string; 
+     phone: string; 
+     address: string; }) {
   const index = customers.findIndex(customer => customer.id === updatedCustomer.id);
   if (index !== -1) {
     customers[index] = updatedCustomer;
